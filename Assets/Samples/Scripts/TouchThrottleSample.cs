@@ -8,12 +8,12 @@ namespace TouchThrottle.Samples
 {
     public class TouchThrottleSample : MonoBehaviour
     {
-        [SerializeField] private Button _button1;
-        [SerializeField] private Button _button2;
-        [SerializeField] private Text _logText;
-        [SerializeField] private Button _toggleButton;
+        [SerializeField] private Button _button1 = default;
+        [SerializeField] private Button _button2 = default;
+        [SerializeField] private Text _logText = default;
+        [SerializeField] private Button _toggleButton = default;
 
-        [SerializeField] private TouchThrottledInputModule _inputModule;
+        [SerializeField] private TouchThrottledInputModule _inputModule = default;
 
         private readonly Queue<string> _logs = new Queue<string>();
 
