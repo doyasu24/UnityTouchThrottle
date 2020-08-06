@@ -5,5 +5,7 @@
     "unity": "2018.4",
     "description": "Touch throttled input module for Unity",
     "license": "MIT",
-    "dependencies": {}
+    "dependencies": {
+        "com.unity.ugui": "1.0.0"
+    }
 }
