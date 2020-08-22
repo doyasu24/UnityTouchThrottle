@@ -23,11 +23,10 @@ import UnityTouchThrottle unitypackage from release page.
 
 # How to use
 
-use `TouchThrottledEventSystem` prefab instead of default `EventSystem`
+generate a default `EventSystem` and add `TouchThrottledInputModule` component instead of `StandaloneInputModule`.
 
-![how-to-use-prefab](doc/how-to-use-prefab.png)
+![how-to-use](doc/how-to-use.png)
 
-or generate a default `EventSystem` and add `TouchThrottledInputModule` component instead of `StandaloneInputModule`.
 
 # License
 
