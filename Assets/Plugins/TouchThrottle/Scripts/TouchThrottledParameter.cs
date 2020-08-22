@@ -6,10 +6,10 @@ namespace TouchThrottle
     [Serializable]
     public class TouchThrottledParameter
     {
-        [SerializeField] private int _throttleFrame = 3;
+        [SerializeField] private int _throttleFrame = 2;
         public int ThrottleFrame => _throttleFrame;
 
-        [SerializeField] private float _throttleTimeInSeconds = 0.15f;
+        [SerializeField] private float _throttleTimeInSeconds = 0f;
         public float ThrottleTimeInSeconds => _throttleTimeInSeconds;
 
         [SerializeField] private bool _countUnscaledTime = false;
