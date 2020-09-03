@@ -31,23 +31,40 @@ namespace TouchThrottle
             base.Process();
         }
 
+        // see https://docs.unity3d.com/2019.4/Documentation/ScriptReference/UIElements.PointerEventBase_1-pointerId.html
+        private int? _handingPointerId = null;
+
         private bool ProcessTouchEvents()
         {
-            var result = input.touchCount > 0;
             for (var index = 0; index < input.touchCount; ++index)
             {
                 var touch = input.GetTouch(index);
                 if (touch.type == TouchType.Indirect) continue;
                 var pointerEventData = GetTouchPointerEventData(touch, out var pressed, out var released);
-                if (pressed && !_controller.TouchAllowed)
+
+                if (_handingPointerId.HasValue)
                 {
-                    ProcessTouchPress(pointerEventData, false, released); // 押してないことにする
+                    if (_handingPointerId.Value != pointerEventData.pointerId) continue;
+
+                    if (released)
+                    {
+                        _handingPointerId = null;
+                        _controller.OnTouchReleased();
+                    }
                 }
                 else
                 {
-                    ProcessTouchPress(pointerEventData, pressed, released);
-                    if (pressed) _controller.OnTouchPressed();
+                    if (pressed && _controller.TouchAllowed)
+                    {
+                        _handingPointerId = pointerEventData.pointerId;
+                    }
+                    else
+                    {
+                        continue;
+                    }
                 }
+
+                ProcessTouchPress(pointerEventData, pressed, released);
 
                 if (!released)
                 {
@@ -58,7 +75,7 @@ namespace TouchThrottle
                     RemovePointerData(pointerEventData);
             }
 
-            return result;
+            return input.touchCount > 0;
         }
 
         private static T GetOrAddComponent<T>(GameObject gameObject) where T : Component

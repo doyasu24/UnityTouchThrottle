@@ -19,7 +19,7 @@ namespace TouchThrottle
         private int _previousTouchedFrame;
         private int _currentTouchedCount;
 
-        public void OnTouchPressed()
+        public void OnTouchReleased()
         {
             _previousTouchedTimeInSeconds = _parameter.GetCurrentTimeInSeconds();
             _previousTouchedFrame = Time.frameCount;
