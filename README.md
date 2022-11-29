@@ -9,21 +9,15 @@ Throttling mouse click events are not supported now.
 
 # Install
 
-## Install via git URL
-
-In Unity 2019.4 or later, you can add `https://github.com/kado-yasuyuki/UnityTouchThrottle.git?path=Assets/Plugins/TouchThrottle` to Package Manager
+You can add `https://github.com/doyasu24/UnityTouchThrottle.git?path=Assets/Plugins/TouchThrottle` to Package Manager
 
 ![package-manager-add-from-git-url](doc/package-manager-add-from-git-url.png)
 
-or add `"com.dys.unitytouchthrottle": "https://github.com/kado-yasuyuki/UnityTouchThrottle.git?path=Assets/Plugins/TouchThrottle"` to Packages/manifest.json.
-
-## Install via unitypackage
-
-import UnityTouchThrottle unitypackage from release page.
+or import unitypackage from [release page](https://github.com/doyasu24/UnityTouchThrottle/releases).
 
 # How to use
 
-generate a default `EventSystem` and add `TouchThrottledInputModule` component instead of `StandaloneInputModule`.
+Generate a default `EventSystem` and add `TouchThrottledInputModule` component instead of `StandaloneInputModule`.
 
 ![how-to-use](doc/how-to-use.png)
 
