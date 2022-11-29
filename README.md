@@ -9,7 +9,7 @@ Throttling mouse click events are not supported now.
 
 # Install
 
-You can add `https://github.com/doyasu24/UnityTouchThrottle.git?path=Assets/Plugins/TouchThrottle` to Package Manager
+You can add `https://github.com/doyasu24/UnityTouchThrottle.git?path=Assets/Plugins/TouchThrottle#v0.1.3` to Package Manager
 
 ![package-manager-add-from-git-url](doc/package-manager-add-from-git-url.png)
 
